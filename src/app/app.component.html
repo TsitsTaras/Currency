@@ -1,0 +1,21 @@
+<header>
+  <h3 class="currency">Курс валют</h3>
+  <table>
+    <tr>
+      <td *ngFor="let currency of filteredCurrencyList">
+        {{ currency.cc }} - {{ currency.rate }}
+      </td>
+    </tr>
+  </table>
+</header>
+<form>
+  <h3 class="conversion">Конвертер валют</h3>
+  <app-conversion
+    (changes)="fromCurrentcy($event)"
+    [value]="fromValue.conversion"
+  ></app-conversion>
+  <app-conversion
+    (changes)="toCurrentcy($event)"
+    [value]="toValue.conversion"
+  ></app-conversion>
+</form>

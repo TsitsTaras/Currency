@@ -1,0 +1,12 @@
+<form [formGroup]="formGroup">
+  <mat-form-field class="conversion">
+    <input type="text" matInput value="0.00" formControlName="conversion" />
+  </mat-form-field>
+  <mat-form-field class="currency">
+    <mat-select formControlName="currency">
+      <mat-option [value]="currency.value" *ngFor="let currency of currencies">
+        {{ currency.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
